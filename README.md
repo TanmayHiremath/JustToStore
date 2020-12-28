@@ -18,7 +18,7 @@ psql -U postgres -h localhost
 virtualenv env #(only first time)
 source env/bin/activate
 
-pip install -r requirments.txt #(only first time)
+pip install -r requirements.txt #(only first time)
 ```  
 
 
