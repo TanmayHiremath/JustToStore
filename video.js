@@ -1,6 +1,6 @@
 function main() {
   let videos = document.querySelectorAll('video');
-  let tdelta = 5;
+  let tdelta = 10;
 
   function isChild(parentNodes, element) {
     for (el of parentNodes) {
