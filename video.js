@@ -1,34 +1,7 @@
 function main() {
   let videos = document.querySelectorAll('video');
-
-  // let outerDiv = document.createElement('div', { id: 'playback-speed' });
-  // let viewButton = document.createElement('input');
-  // viewButton.type = 'button';
-  // viewButton.value = 'toggle';
-  // viewButton.style.display = 'inline-block';
-  // viewButton.style.zIndex = '10000002';
-  // outerDiv.style.position = 'fixed';
-  // outerDiv.style.top = '10px';
-  // outerDiv.style.right = '10px';
-  // outerDiv.style.width = '200px';
-  // outerDiv.style.height = '200px';
-  // outerDiv.style.zIndex = '10000001';
-
-  // let playbackSpeedDiv = document.createElement('div', {
-  //   id: 'playback-speed',
-  // });
-  // playbackSpeedDiv = document.createElement('div', { id: 'playback-speed' });
-  // playbackSpeedDiv.style.width = '100px';
-  // playbackSpeedDiv.style.height = '50px';
-  // playbackSpeedDiv.style.display = 'flex';
-  // playbackSpeedDiv.style.justifyContent = 'space-between';
-  // playbackSpeedDiv.style.flexDirection = 'horizontal';
-  // playbackSpeedDiv.style.zIndex = '10000001';
-  // playbackSpeedDiv.style.border = 'black 2px dotted';
-  // playbackSpeedDiv.style.backgroundColor = 'white';
-
   let playbackSpeedField = document.createElement('div');
-  playbackSpeedField.innerHTML = '0.0';
+  playbackSpeedField.innerHTML = '1.0';
   playbackSpeedField.style.width = '75px';
   playbackSpeedField.style.height = '50px';
   playbackSpeedField.style.position = 'fixed';
@@ -80,12 +53,12 @@ function main() {
       videlem.currentTime += tdelta;
     }
     else if (e.key === '[') {
-      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML) - 0.10).toString().slice(0, 4);
-      videlem.playbackRate -= 0.10;
+      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0,3)) - 0.1).toPrecision(3);
+      videlem.playbackRate -= 0.1;
     }
     else if (e.key === ']') {
-      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML) + 0.10).toString().slice(0, 4);
-      videlem.playbackRate += 0.10;
+      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0,3)) + 0.1).toPrecision(3);
+      videlem.playbackRate += 0.1;
     }
   };
 
