@@ -113,7 +113,7 @@ function main() {
   //   videlem.playbackRate = playbackSpeedField.value;
   // });
 
-  // document.querySelector('body').appendChild(outerDiv);
+ document.querySelector('body').appendChild(playbackSpeedField);
 }
 
 main();
