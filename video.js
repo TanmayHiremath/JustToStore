@@ -35,8 +35,8 @@ function main() {
   // outerDiv.appendChild(viewButton);
   // outerDiv.appendChild(playbackSpeedDiv);
   playbackSpeedField.type = 'number';
-  playbackSpeedField.style.width = '100px';
-  playbackSpeedField.style.height = '75px';
+  playbackSpeedField.style.width = '75px';
+  playbackSpeedField.style.height = '50px';
   // playbackSpeedButton.type = 'button';
   playbackSpeedField.style.position = 'fixed';
   playbackSpeedField.style.right = '5px';
@@ -90,11 +90,11 @@ function main() {
       videlem.currentTime += tdelta;
     }
     else if (e.key === '[') {
-      playbackSpeedField.value-=0.2;
+      playbackSpeedField.value=playbackSpeedField.value-0.2;
       videlem.playbackRate-= 0.2;
     }
     else if (e.key === ']') {
-      playbackSpeedField.value+=0.2;
+      playbackSpeedField.value=playbackSpeedField.value+0.2;
       videlem.playbackRate+= 0.2;
     }
   };
