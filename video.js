@@ -27,14 +27,13 @@ function main() {
   // playbackSpeedDiv.style.border = 'black 2px dotted';
   // playbackSpeedDiv.style.backgroundColor = 'white';
 
-  let playbackSpeedField = document.createElement('input', { type: 'number',step:'0.5' });
-  let playbackSpeedButton = document.createElement('input');
-  playbackSpeedField.value=0;
+  let playbackSpeedField = document.createElement('div');
+
   // playbackSpeedDiv.appendChild(playbackSpeedField);
   // playbackSpeedDiv.appendChild(playbackSpeedButton);
   // outerDiv.appendChild(viewButton);
   // outerDiv.appendChild(playbackSpeedDiv);
-  playbackSpeedField.type = 'number';
+
   playbackSpeedField.style.width = '75px';
   playbackSpeedField.style.height = '50px';
   // playbackSpeedButton.type = 'button';
@@ -90,11 +89,11 @@ function main() {
       videlem.currentTime += tdelta;
     }
     else if (e.key === '[') {
-      playbackSpeedField.value=playbackSpeedField.value-0.2;
+      playbackSpeedField.innerHTML=(parseFloat(playbackSpeedField.innerHTML)-0.2).toString();
       videlem.playbackRate-= 0.2;
     }
     else if (e.key === ']') {
-      playbackSpeedField.value=playbackSpeedField.value+0.2;
+      playbackSpeedField.value=(parseFloat(playbackSpeedField.innerHTML)+0.2).toString();
       videlem.playbackRate+= 0.2;
     }
   };
