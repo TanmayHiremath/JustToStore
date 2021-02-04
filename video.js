@@ -87,10 +87,10 @@ function main() {
       videlem.currentTime += tdelta;
     }
     else if (e.key === '[') {
-      playbackSpeedField.value+= 0.2;
+      videlem.playbackRate+= 0.2;
     }
     else if (e.key === ']') {
-      playbackSpeedField.value+= 0.2;
+      videlem.playbackRate+= 0.2;
     }
   };
 
