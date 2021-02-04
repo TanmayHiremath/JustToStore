@@ -40,25 +40,25 @@ function main() {
   });
 
   let tdelta = 5;
-  document.onkeypress = (e) => {
+  document.onkeydown = (e) => {
     if (videlem == null) return;
     if (e.key === ' ' || e.key === 'k') {
       !videlem.paused ? videlem.pause() : videlem.play();
-    } else if (e.key === 'j') {
+    } else if (e.code === '37') {
       videlem.currentTime -= tdelta;
-    } else if (e.key === 'l') {
+    } else if (e.code === '39') {
       videlem.currentTime += tdelta;
     }
     else if (e.key === 'l') {
       videlem.currentTime += tdelta;
     }
     else if (e.key === '[') {
-      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0,3)) - 0.1).toPrecision(3);
-      videlem.playbackRate -= 0.1;
+      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0,3)) - 0.2).toPrecision(3);
+      videlem.playbackRate -= 0.2;
     }
     else if (e.key === ']') {
-      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0,3)) + 0.1).toPrecision(3);
-      videlem.playbackRate += 0.1;
+      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0,3)) + 0.2).toPrecision(3);
+      videlem.playbackRate += 0.2;
     }
   };
 
