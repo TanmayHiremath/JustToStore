@@ -33,7 +33,7 @@ function main() {
   // playbackSpeedDiv.appendChild(playbackSpeedButton);
   // outerDiv.appendChild(viewButton);
   // outerDiv.appendChild(playbackSpeedDiv);
-
+  playbackSpeedField.innerHTML='0';
   playbackSpeedField.style.width = '75px';
   playbackSpeedField.style.height = '50px';
   // playbackSpeedButton.type = 'button';
