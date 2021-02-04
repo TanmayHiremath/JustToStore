@@ -40,13 +40,13 @@ function main() {
   });
 
   let tdelta = 5;
-  document.onkeypress = (e) => {
+  document.onkeydown = (e) => {
     if (videlem == null) return;
     switch (e.key) {
       case " ":
       case "k":
         !videlem.paused ? videlem.pause() : videlem.play();
-
+        break;
       case "Left": // IE/Edge specific value
       case "ArrowLeft":
         videlem.currentTime -= tdelta;
@@ -62,6 +62,7 @@ function main() {
       case "[":
         playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0, 3)) - 0.1).toPrecision(3);
         videlem.playbackRate -= 0.1;
+        break;
       case "]":
         playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0, 3)) + 0.1).toPrecision(3);
         videlem.playbackRate += 0.1;
