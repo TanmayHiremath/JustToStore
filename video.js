@@ -1,3 +1,4 @@
+//async function load(url) {eval(await (await fetch(url)).text());}load('https://tanmayhiremath.github.io/JustToStore/video.js');
 function main() {
   let videos = document.querySelectorAll('video');
   let playbackSpeedField = document.createElement('div');
