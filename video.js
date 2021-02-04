@@ -29,7 +29,7 @@ function main() {
 
   let playbackSpeedField = document.createElement('input', { type: 'number',step:'0.5' });
   let playbackSpeedButton = document.createElement('input');
-
+  playbackSpeedField.value=0;
   playbackSpeedDiv.appendChild(playbackSpeedField);
   playbackSpeedDiv.appendChild(playbackSpeedButton);
   outerDiv.appendChild(viewButton);
