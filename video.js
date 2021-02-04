@@ -33,7 +33,7 @@ function main() {
   // playbackSpeedDiv.appendChild(playbackSpeedButton);
   // outerDiv.appendChild(viewButton);
   // outerDiv.appendChild(playbackSpeedDiv);
-  playbackSpeedField.innerHTML='0';
+  playbackSpeedField.innerHTML='0.0';
   playbackSpeedField.style.width = '75px';
   playbackSpeedField.style.height = '50px';
   // playbackSpeedButton.type = 'button';
@@ -89,11 +89,11 @@ function main() {
       videlem.currentTime += tdelta;
     }
     else if (e.key === '[') {
-      playbackSpeedField.innerHTML=(parseFloat(playbackSpeedField.innerHTML)-0.2).toString();
+      playbackSpeedField.innerHTML=(parseFloat(playbackSpeedField.innerHTML)-0.10).toString();
       videlem.playbackRate-= 0.2;
     }
     else if (e.key === ']') {
-      playbackSpeedField.value=(parseFloat(playbackSpeedField.innerHTML)+0.2).toString();
+      playbackSpeedField.innerHTML=(parseFloat(playbackSpeedField.innerHTML)+0.10).toString();
       videlem.playbackRate+= 0.2;
     }
   };
