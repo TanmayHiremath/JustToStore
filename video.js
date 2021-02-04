@@ -27,7 +27,7 @@ function main() {
   playbackSpeedDiv.style.border = 'black 2px dotted';
   playbackSpeedDiv.style.backgroundColor = 'white';
 
-  let playbackSpeedField = document.createElement('input', { type: 'number' });
+  let playbackSpeedField = document.createElement('input', { type: 'number',step:'0.5' });
   let playbackSpeedButton = document.createElement('input');
 
   playbackSpeedDiv.appendChild(playbackSpeedField);
@@ -82,6 +82,15 @@ function main() {
       videlem.currentTime -= tdelta;
     } else if (e.key === 'l') {
       videlem.currentTime += tdelta;
+    }
+    else if (e.key === 'l') {
+      videlem.currentTime += tdelta;
+    }
+    else if (e.key === '[') {
+      playbackSpeedField.value+= 0.2;
+    }
+    else if (e.key === ']') {
+      playbackSpeedField.value+= 0.2;
     }
   };
 
