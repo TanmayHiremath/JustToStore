@@ -99,13 +99,13 @@ function main() {
     }
   };
 
-  viewButton.addEventListener('click', (e) => {
-    if (playbackSpeedDiv.style.opacity == '1') {
-      playbackSpeedDiv.style.opacity = '0';
-    } else {
-      playbackSpeedDiv.style.opacity = '1';
-    }
-  });
+  // viewButton.addEventListener('click', (e) => {
+  //   if (playbackSpeedDiv.style.opacity == '1') {
+  //     playbackSpeedDiv.style.opacity = '0';
+  //   } else {
+  //     playbackSpeedDiv.style.opacity = '1';
+  //   }
+  // });
 
   // playbackSpeedButton.addEventListener('click', (e) => {
   //   e.preventDefault();
@@ -113,7 +113,7 @@ function main() {
   //   videlem.playbackRate = playbackSpeedField.value;
   // });
 
-  document.querySelector('body').appendChild(outerDiv);
+  // document.querySelector('body').appendChild(outerDiv);
 }
 
 main();
