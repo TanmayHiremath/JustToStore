@@ -1,4 +1,3 @@
-//async function load(url) {eval(await (await fetch(url)).text());}load('https://tanmayhiremath.github.io/JustToStore/video.js');
 function main() {
   let videos = document.querySelectorAll('video');
   let playbackSpeedField = document.createElement('div');
@@ -41,25 +40,34 @@ function main() {
   });
 
   let tdelta = 5;
-  document.onkeydown = (e) => {
+  document.onkeypress = (e) => {
     if (videlem == null) return;
-    if (e.key === ' ' || e.key === 'k') {
-      !videlem.paused ? videlem.pause() : videlem.play();
-    } else if (e.code === '37') {
-      videlem.currentTime -= tdelta;
-    } else if (e.code === '39') {
-      videlem.currentTime += tdelta;
-    }
-    else if (e.key === 'l') {
-      videlem.currentTime += tdelta;
-    }
-    else if (e.key === '[') {
-      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0,3)) - 0.2).toPrecision(3);
-      videlem.playbackRate -= 0.2;
-    }
-    else if (e.key === ']') {
-      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0,3)) + 0.2).toPrecision(3);
-      videlem.playbackRate += 0.2;
+    switch (e.key) {
+      case " ":
+      case "k":
+        !videlem.paused ? videlem.pause() : videlem.play();
+
+      case "Left": // IE/Edge specific value
+      case "ArrowLeft":
+        videlem.currentTime -= tdelta;
+        break;
+      case "Right": // IE/Edge specific value
+      case "ArrowRight":
+        videlem.currentTime += tdelta;
+        break;
+      case "Enter":
+        // Do something for "enter" or "return" key press.
+        break;
+
+      case "[":
+        playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0, 3)) - 0.1).toPrecision(3);
+        videlem.playbackRate -= 0.1;
+      case "]":
+        playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML.slice(0, 3)) + 0.1).toPrecision(3);
+        videlem.playbackRate += 0.1;
+        break;
+      default:
+        return; // Quit when this doesn't handle the key event.
     }
   };
 
