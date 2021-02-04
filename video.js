@@ -28,22 +28,13 @@ function main() {
   // playbackSpeedDiv.style.backgroundColor = 'white';
 
   let playbackSpeedField = document.createElement('div');
-
-  // playbackSpeedDiv.appendChild(playbackSpeedField);
-  // playbackSpeedDiv.appendChild(playbackSpeedButton);
-  // outerDiv.appendChild(viewButton);
-  // outerDiv.appendChild(playbackSpeedDiv);
-  playbackSpeedField.innerHTML='0.0';
+  playbackSpeedField.innerHTML = '0.0';
   playbackSpeedField.style.width = '75px';
   playbackSpeedField.style.height = '50px';
-  // playbackSpeedButton.type = 'button';
   playbackSpeedField.style.position = 'fixed';
   playbackSpeedField.style.right = '5px';
   playbackSpeedField.style.top = '5px';
-  // playbackSpeedButton.style.width = '50px';
-  // playbackSpeedButton.style.height = '50px';
   playbackSpeedField.style.zIndex = '10000001';
-  // playbackSpeedButton.value = 'Set';
 
   function isChild(parentNodes, element) {
     for (el of parentNodes) {
@@ -89,30 +80,16 @@ function main() {
       videlem.currentTime += tdelta;
     }
     else if (e.key === '[') {
-      playbackSpeedField.innerHTML=(parseFloat(playbackSpeedField.innerHTML)-0.10).toString();
-      videlem.playbackRate-= 0.2;
+      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML) - 0.10).toString().slice(0, 4);
+      videlem.playbackRate -= 0.10;
     }
     else if (e.key === ']') {
-      playbackSpeedField.innerHTML=(parseFloat(playbackSpeedField.innerHTML)+0.10).toString();
-      videlem.playbackRate+= 0.2;
+      playbackSpeedField.innerHTML = (parseFloat(playbackSpeedField.innerHTML) + 0.10).toString().slice(0, 4);
+      videlem.playbackRate += 0.10;
     }
   };
 
-  // viewButton.addEventListener('click', (e) => {
-  //   if (playbackSpeedDiv.style.opacity == '1') {
-  //     playbackSpeedDiv.style.opacity = '0';
-  //   } else {
-  //     playbackSpeedDiv.style.opacity = '1';
-  //   }
-  // });
-
-  // playbackSpeedButton.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   if (videlem == null) return;
-  //   videlem.playbackRate = playbackSpeedField.value;
-  // });
-
- document.querySelector('body').appendChild(playbackSpeedField);
+  document.querySelector('body').appendChild(playbackSpeedField);
 }
 
 main();
