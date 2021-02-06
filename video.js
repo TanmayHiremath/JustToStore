@@ -2,7 +2,7 @@ function main() {
   let videos = document.querySelectorAll('video');
   let playbackSpeedField = document.createElement('div');
   playbackSpeedField.innerHTML = '1.0';
-  playbackSpeedField.style.width = '75px';
+  playbackSpeedField.style.width = '50px';
   playbackSpeedField.style.height = '50px';
   playbackSpeedField.style.position = 'fixed';
   playbackSpeedField.style.right = '5px';
@@ -40,6 +40,7 @@ function main() {
   });
 
   let tdelta = 5;
+  let bool;
   document.onkeydown = (e) => {
     if (videlem == null) return;
     switch (e.key) {
@@ -49,11 +50,15 @@ function main() {
         break;
       case "Left": // IE/Edge specific value
       case "ArrowLeft":
+        bool=videlem.paused
         videlem.currentTime -= tdelta;
+        videlem.paused ? videlem.pause() : videlem.play();
         break;
       case "Right": // IE/Edge specific value
       case "ArrowRight":
+        bool=videlem.paused
         videlem.currentTime += tdelta;
+        videlem.paused ? videlem.pause() : videlem.play();
         break;
       case "Enter":
         // Do something for "enter" or "return" key press.
