@@ -52,13 +52,13 @@ function main() {
       case "ArrowLeft":
         bool=videlem.paused
         videlem.currentTime -= tdelta;
-        videlem.paused ? videlem.pause() : videlem.play();
+        // videlem.paused ? videlem.pause() : videlem.play();
         break;
       case "Right": // IE/Edge specific value
       case "ArrowRight":
         bool=videlem.paused
         videlem.currentTime += tdelta;
-        videlem.paused ? videlem.pause() : videlem.play();
+        // videlem.paused ? videlem.pause() : videlem.play();
         break;
       case "Enter":
         // Do something for "enter" or "return" key press.
